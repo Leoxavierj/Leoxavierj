@@ -6,12 +6,10 @@ Next.js (App Router) + Upstash Redis + Resend, publicado no Vercel.
 - `/lista` — área privada (Leonardo e Flávia) com resumo, lista, cadastro manual e exportação CSV
 - `/convite.ics` — evento para adicionar ao calendário
 
-## Imagens (obrigatório antes de publicar)
+## Imagens
 
-Coloque na pasta `public/`:
-
-- `public/convite.jpg` — convite inteiro (topo da página)
-- `public/og-image.jpg` — prévia do WhatsApp, 1200×630, de preferência com menos de 300 KB
+- `public/convite.jpg` — convite inteiro (topo da página, 914×1600; o Next.js entrega em WebP/AVIF no tamanho da tela)
+- `public/og-image.jpg` — prévia do WhatsApp, 1200×630
 
 ## Variáveis de ambiente
 
@@ -35,13 +33,12 @@ Observações:
 
 ## Publicar no Vercel
 
-1. Adicione `public/convite.jpg` e `public/og-image.jpg`, faça commit e push.
-2. Em vercel.com → **Add New → Project**, importe este repositório (framework: Next.js, sem configurações extras).
-3. No projeto: **Storage → Create Database → Upstash (Redis)**, conecte ao projeto em todos os ambientes. Isso cria `KV_REST_API_URL` e `KV_REST_API_TOKEN`.
-4. Em **Settings → Environment Variables**, adicione as demais variáveis da tabela.
-5. **Deployments → Redeploy** (as variáveis só valem a partir de um novo deploy).
-6. Teste: abra o site, confirme uma presença de teste, veja se o e-mail chegou, entre em `/lista` e remova o teste.
-7. Antes de mandar no WhatsApp, cole o link em https://developers.facebook.com/tools/debug/ para conferir a prévia. O WhatsApp guarda a prévia em cache: acerte a imagem antes do primeiro envio.
+1. Em vercel.com → **Add New → Project**, importe este repositório (framework: Next.js, sem configurações extras).
+2. No projeto: **Storage → Create Database → Upstash (Redis)**, conecte ao projeto em todos os ambientes. Isso cria `KV_REST_API_URL` e `KV_REST_API_TOKEN`.
+3. Em **Settings → Environment Variables**, adicione as demais variáveis da tabela.
+4. **Deployments → Redeploy** (as variáveis só valem a partir de um novo deploy).
+5. Teste: abra o site, confirme uma presença de teste, veja se o e-mail chegou, entre em `/lista` e remova o teste.
+6. Antes de mandar no WhatsApp, cole o link em https://developers.facebook.com/tools/debug/ para conferir a prévia. O WhatsApp guarda a prévia em cache: acerte a imagem antes do primeiro envio.
 
 ## Rodar localmente
 

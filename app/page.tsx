@@ -3,6 +3,7 @@ import Image from "next/image";
 import { EVENT, GOOGLE_CALENDAR_URL, MAPS_URL } from "@/lib/event";
 import { siteUrl } from "@/lib/site";
 import RsvpForm from "./RsvpForm";
+import convite from "@/public/convite.jpg";
 import { Controle, Estrelas, IconCalendario, IconPin, IconRelogio } from "./Decor";
 
 const titulo = "Aniversário de 5 anos do Théo";
@@ -35,11 +36,10 @@ export default function Home() {
 
       <header className="convite">
         <Image
-          src="/convite.jpg"
+          src={convite}
           alt="Convite do aniversário de 5 anos do Théo"
-          width={1080}
-          height={1350}
           priority
+          placeholder="blur"
           sizes="(max-width: 560px) 100vw, 560px"
           quality={80}
         />
